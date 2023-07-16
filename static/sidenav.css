@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("website.jpg");
+    background-position: center 65%;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .sidenav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 90px 0;
+    border: 5px solid black;
+    border-radius: 10px;
+  }
+  
+  .sidenav a:hover {
+    background-color: #555;
+  }
+  
+  .main-content {
+    margin-left: 200px; /* Adjust this value to match the width of the sidenav */
+    padding: 20px;
+  }
+  

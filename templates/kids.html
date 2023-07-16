@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kids dress code</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/edit_profile.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/explore.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="sidenav">
+        <a href="{{ url_for('views.dashboard', profile_id=profile.id) }}"><i class="fas fa-user"></i> Profile</a>
+        <a href="#"><i class="fas fa-envelope"></i> Chats</a>
+        <a href="{{ url_for('fashion.home', profile_id=profile.id) }}"><i class="fas fa-search"></i> Find Dress Code</a>
+        <a href="#"><i class="far fa-heart"></i> Saved</a>
+        <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    
+    <div class="section">
+        <div class="section-buttons">
+            <a href="{{ url_for('fashion.official', profile_id=profile.id) }}">Official</a>
+            <a href="{{ url_for('fashion.kids', profile_id=profile.id) }}">For kids</a>
+            <a href="{{ url_for('fashion.casual', profile_id=profile.id) }}">Casual</a>
+            <a href="#">Traditonal</a>
+        </div>
+    </div>
+
+
+    <div class="image-gallery" id="gallery-container"></div>
+      
+    <script>
+        const filenames = [
+        "kids.jpg",
+        "photo_5850446684033760198_y(1).jpg",
+        "photo_5850446684033760200_y.jpg",
+        "photo_5850446684033760203_x.jpg",
+        
+        "photo_5850446684033760210_y.jpg",
+        "photo_5850446684033760214_y.jpg",
+        "photo_5850446684033760225_y(1).jpg",
+        "photo_5850446684033760229_y.jpg",
+        "photo_5850446684033760233_y.jpg",
+        "photo_5850446684033760237_y.jpg",
+        "photo_5850446684033760241_x.jpg",
+        "photo_5852909216417824055_y.jpg",
+        "photo_5852909216417824062_y.jpg",
+        "photo_5850446684033760197_y.jpg",
+        "photo_5850446684033760199_y.jpg",
+        "photo_5850446684033760201_y.jpg",
+        "photo_5850446684033760203_x(1).jpg",
+        "photo_5850446684033760207_x.jpg",
+        "photo_5850446684033760211_x.jpg",
+        "photo_5850446684033760215_x.jpg",
+        "photo_5850446684033760226_y.jpg",
+        "photo_5850446684033760230_y.jpg",
+        "photo_5850446684033760234_y.jpg",
+        "photo_5850446684033760238_y.jpg",
+        "photo_5850446684033760242_y.jpg",
+        "photo_5852909216417824057_y.jpg",
+        "photo_5852909216417824063_y.jpg",
+        "photo_5850446684033760197_y(1).jpg",
+        "photo_5850446684033760199_y(1).jpg",
+        "photo_5850446684033760202_y.jpg",
+        "photo_5850446684033760204_y.jpg",
+        "photo_5850446684033760208_y.jpg",
+        "photo_5850446684033760212_x.jpg",
+        "photo_5850446684033760216_x.jpg",
+        "photo_5850446684033760227_y.jpg",
+        "photo_5850446684033760231_y.jpg",
+        "photo_5850446684033760235_y.jpg",
+        "photo_5850446684033760239_y.jpg",
+        "photo_5850446684033760243_x.jpg",
+        "photo_5852909216417824059_y.jpg",
+        "photo_5852909216417824066_y.jpg",
+        "photo_5850446684033760198_y.jpg",
+        "photo_5850446684033760199_y(2).jpg",
+        "photo_5850446684033760202_y(1).jpg",
+        
+        "photo_5850446684033760209_y.jpg",
+        "photo_5850446684033760213_y.jpg",
+        "photo_5850446684033760225_y.jpg",
+        "photo_5850446684033760228_y.jpg",
+        "photo_5850446684033760232_y.jpg",
+        "photo_5850446684033760236_y.jpg",
+        "photo_5850446684033760240_x.jpg",
+        "photo_5850446684033760244_y.jpg",
+        "photo_5852909216417824061_y.jpg"
+
+        ];
+
+        const galleryContainer = document.getElementById('gallery-container');
+
+        filenames.forEach(filename => {
+            const img = document.createElement('img');
+            img.src = "{{ url_for('static', filename='images/kids_samples/') }}" + filename;
+            img.alt = filename;
+            galleryContainer.appendChild(img);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Official dress code</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/edit_profile.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/explore.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="sidenav">
+        <a href="{{ url_for('views.dashboard', profile_id=profile.id) }}"><i class="fas fa-user"></i> Profile</a>
+        <a href="#"><i class="fas fa-envelope"></i> Chats</a>
+        <a href="{{ url_for('fashion.home', profile_id=profile.id) }}"><i class="fas fa-search"></i> Find Dress Code</a>
+        <a href="#"><i class="far fa-heart"></i> Saved</a>
+        <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    
+    <div class="section">
+        <div class="section-buttons">
+            <a href="{{ url_for('fashion.official', profile_id=profile.id) }}">Official</a>
+            <a href="{{ url_for('fashion.kids', profile_id=profile.id) }}">For kids</a>
+            <a href="{{ url_for('fashion.casual', profile_id=profile.id) }}">Casual</a>
+            <a href="#">Traditonal</a>
+        </div>
+    </div>
+
+    <div class="image-gallery" id="gallery-container"></div>
+      
+    <script>
+        const filenames = [
+        "business.jpg",
+        "photo_5841259259361345419_x.jpg",
+        "photo_5841259259361345423_y.jpg",
+        "photo_5841259259361345430_y.jpg",
+        "photo_5841259259361345434_y.jpg",
+        "photo_5841259259361345440_y.jpg",
+        "photo_5841259259361345444_y.jpg",
+        "photo_5841259259361345449_y.jpg",
+        "photo_5841259259361345458_y.jpg",
+        "photo_5841259259361345463_y.jpg",
+        "official.jpg",
+        "photo_5841259259361345420_y.jpg",
+        "photo_5841259259361345424_x.jpg",
+        "photo_5841259259361345431_x.jpg",
+        "photo_5841259259361345435_x.jpg",
+        "photo_5841259259361345441_x.jpg",
+        "photo_5841259259361345446_y.jpg",
+        "photo_5841259259361345450_y.jpg",
+        "photo_5841259259361345460_y.jpg",
+        "photo_5841259259361345464_y.jpg",
+        "photo_5841259259361345416_y.jpg",
+        "photo_5841259259361345421_y.jpg",
+        "photo_5841259259361345425_y.jpg",
+        "photo_5841259259361345432_x.jpg",
+        "photo_5841259259361345436_y.jpg",
+        "photo_5841259259361345442_y.jpg",
+        "photo_5841259259361345447_y.jpg",
+        "photo_5841259259361345456_y.jpg",
+        "photo_5841259259361345461_y.jpg",
+        "photo_5841259259361345465_y.jpg",
+        "photo_5841259259361345417_y.jpg",
+        "photo_5841259259361345422_y.jpg",
+        "photo_5841259259361345426_y.jpg",
+        "photo_5841259259361345433_y.jpg",
+        "photo_5841259259361345439_y.jpg",
+        "photo_5841259259361345443_x.jpg",
+        "photo_5841259259361345448_y.jpg",
+        "photo_5841259259361345457_y.jpg",
+        "photo_5841259259361345462_y.jpg",
+        "used.jpg"
+
+        ];
+
+        const galleryContainer = document.getElementById('gallery-container');
+
+        filenames.forEach(filename => {
+            const img = document.createElement('img');
+            img.src = "{{ url_for('static', filename='images/official_samples/') }}" + filename;
+            img.alt = filename;
+            galleryContainer.appendChild(img);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
